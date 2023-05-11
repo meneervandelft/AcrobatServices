@@ -6,30 +6,26 @@
 </head>
 
 <body>
-	<strong>Hallo daar wederom 11</strong>
-	
+	<strong>Hallo daar wederom 12</strong>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>	
 <script>
-var myHeaders = new Headers();
-myHeaders.append("X-API-Key", "93f7155147a04986b3542b29e54e4b8e");
-myHeaders.append("Authorization", "Bearer eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEta2V5LWF0LTEuY2VyIiwia2lkIjoiaW1zX25hMS1rZXktYXQtMSIsIml0dCI6ImF0In0.eyJpZCI6IjE2ODM4MTY1NDc5MDhfZDc1OWIwYTQtYjM5MS00ZWExLTkzMmQtYzM3ZDhlYjQ0MTFjX3VlMSIsIm9yZyI6Ijk2Qzc0RTQ3NjFBOUQ4MjcwQTQ5NUY5N0BBZG9iZU9yZyIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJjbGllbnRfaWQiOiI5M2Y3MTU1MTQ3YTA0OTg2YjM1NDJiMjllNTRlNGI4ZSIsInVzZXJfaWQiOiI1OUFBMjg5MDY0NUNEQUIyMEE0OTVDQzNAdGVjaGFjY3QuYWRvYmUuY29tIiwiYXMiOiJpbXMtbmExIiwiYWFfaWQiOiI1OUFBMjg5MDY0NUNEQUIyMEE0OTVDQzNAdGVjaGFjY3QuYWRvYmUuY29tIiwiY3RwIjozLCJtb2kiOiI2MjE3NTJiMyIsImV4cGlyZXNfaW4iOiI4NjQwMDAwMCIsImNyZWF0ZWRfYXQiOiIxNjgzODE2NTQ3OTA4Iiwic2NvcGUiOiJEQ0FQSSxvcGVuaWQsQWRvYmVJRCJ9.NIa0g5oVeTd1eC8L0qKpRtJEQ76rVhPS0vlUc055C3I0Z3WZK4wlGn7N7VTEdhKNII_IC9zIMdiqpGBDfYJTxv15ffNfvsGayapaWot1m8kf3XN2o82ga6hI6KcMvhU3f3ixxJtPKdBtkvVscx7xFjZrptk71XgXgaF2kyZnjW_ukLtPIsbV-fce3EC5UyJlgdD6judi72zAXi6pPFHsj8yNHNE0zbBYw-N3cQWvQEqGXO95ujvoM2ISTem6NQgpZQ4KLUaiCpb5XgiASxdbJhjgzIv5GTKFcnJCegVUGwg7fM3BAFvGPCvXR_n2Ta_p_8VjwcVxebXnWvrL9uq4Ig");
-myHeaders.append("Content-Type", "application/json");
-
-var raw = JSON.stringify({
-  "mediaType": "application/pdf"
-});
-
-var requestOptions = {
-  mode: "no-cors",
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
+var settings = {
+  "url": "https://pdf-services-ue1.adobe.io/assets",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "X-API-Key": "93f7155147a04986b3542b29e54e4b8e",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEta2V5LWF0LTEuY2VyIiwia2lkIjoiaW1zX25hMS1rZXktYXQtMSIsIml0dCI6ImF0In0.eyJpZCI6IjE2ODM4MTY1NDc5MDhfZDc1OWIwYTQtYjM5MS00ZWExLTkzMmQtYzM3ZDhlYjQ0MTFjX3VlMSIsIm9yZyI6Ijk2Qzc0RTQ3NjFBOUQ4MjcwQTQ5NUY5N0BBZG9iZU9yZyIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJjbGllbnRfaWQiOiI5M2Y3MTU1MTQ3YTA0OTg2YjM1NDJiMjllNTRlNGI4ZSIsInVzZXJfaWQiOiI1OUFBMjg5MDY0NUNEQUIyMEE0OTVDQzNAdGVjaGFjY3QuYWRvYmUuY29tIiwiYXMiOiJpbXMtbmExIiwiYWFfaWQiOiI1OUFBMjg5MDY0NUNEQUIyMEE0OTVDQzNAdGVjaGFjY3QuYWRvYmUuY29tIiwiY3RwIjozLCJtb2kiOiI2MjE3NTJiMyIsImV4cGlyZXNfaW4iOiI4NjQwMDAwMCIsImNyZWF0ZWRfYXQiOiIxNjgzODE2NTQ3OTA4Iiwic2NvcGUiOiJEQ0FQSSxvcGVuaWQsQWRvYmVJRCJ9.NIa0g5oVeTd1eC8L0qKpRtJEQ76rVhPS0vlUc055C3I0Z3WZK4wlGn7N7VTEdhKNII_IC9zIMdiqpGBDfYJTxv15ffNfvsGayapaWot1m8kf3XN2o82ga6hI6KcMvhU3f3ixxJtPKdBtkvVscx7xFjZrptk71XgXgaF2kyZnjW_ukLtPIsbV-fce3EC5UyJlgdD6judi72zAXi6pPFHsj8yNHNE0zbBYw-N3cQWvQEqGXO95ujvoM2ISTem6NQgpZQ4KLUaiCpb5XgiASxdbJhjgzIv5GTKFcnJCegVUGwg7fM3BAFvGPCvXR_n2Ta_p_8VjwcVxebXnWvrL9uq4Ig",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "mediaType": "application/pdf"
+  }),
 };
 
-fetch("https://pdf-services-ue1.adobe.io/assets", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));	
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 	
 
 </script>
