@@ -6,20 +6,16 @@
 </head>
 
 <body>
-	<strong>Hallo daar wederom 5</strong>
+	<strong>Hallo daar wederom 6</strong>
 	
 <script>
 function callApi(){
 let firstName = "Paul";
 let lastName = "van Delft";
 let comments = "test";
-fetch('https://prod-52.westus.logic.azure.com:443/workflows/7b878522584c4888b9ba65947e388d3c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7tWwYUpE4uJYh1GOFvCaxBi9QNzkkykVjCmDJumUNNw', {
+fetch('https://ims-na1.adobelogin.com/ims/token/v2?grant_type=client_credentials&client_id=93f7155147a04986b3542b29e54e4b8e&client_secret=p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf&scope=openid,AdobeID,DCAPI', {
+	mode: "no-cors",
 	method: 'POST',
-	body: JSON.stringify({
-		firstName: firstName,
-		lastName: lastName,
-		comment: comments
-	}),
 	headers: {
 		'Content-type': 'application/json; charset=UTF-8'
 	}
