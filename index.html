@@ -10,18 +10,18 @@
 	
 <script>
 	var myHeaders = new Headers();
-	myHeaders.append("Cookie", "ftrset=545; relay=544f3573-bf6b-4cff-8086-02d21fd0d6d8");
+myHeaders.append("Cookie", "ftrset=545; relay=544f3573-bf6b-4cff-8086-02d21fd0d6d8");
 
-	var requestOptions = {
-	  method: 'POST',
-	  headers: myHeaders,
-	  redirect: 'follow'
-	};
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  redirect: 'follow'
+};
 
-	fetch("https://ims-na1.adobelogin.com/ims/token/v2?grant_type=client_credentials&client_id=93f7155147a04986b3542b29e54e4b8e&client_secret=p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf&scope=openid,AdobeID,DCAPI", requestOptions)
-	  .then(response => response.text())
-	  .then(result => console.log(result))
-	  .catch(error => console.log('error', error));
+fetch("https://ims-na1.adobelogin.com/ims/token/v2?grant_type=client_credentials&client_id=93f7155147a04986b3542b29e54e4b8e&client_secret=p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf&scope=openid,AdobeID,DCAPI", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 </script>
 </body>
 </html>
