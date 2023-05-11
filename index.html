@@ -6,30 +6,35 @@
 </head>
 
 <body>
-	<strong>Hallo daar wederom 3</strong>
+	<strong>Hallo daar wederom 4</strong>
 	
 <script>
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-myHeaders.append("Cookie", "ftrset=545; relay=544f3573-bf6b-4cff-8086-02d21fd0d6d8");
-
-var urlencoded = new URLSearchParams();
-urlencoded.append("client_secret", "p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf");
-urlencoded.append("grant_type", "client_credentials");
-urlencoded.append("scope", "openid, AdobeID, DCAPI");
-
-var requestOptions = {
-  mode: "no-cors",
-  method: 'POST',
-  headers: myHeaders,
-  body: urlencoded,
-  redirect: 'follow'
-};
-
-fetch("https://ims-na1.adobelogin.com/ims/token/v3?client_id=93f7155147a04986b3542b29e54e4b8e", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+function callApi(){
+let firstName = document.getElementById("firstName").value;
+let lastName = document.getElementById("lastName").value;
+let comments = document.getElementById("firstName").value;
+fetch('https://prod-52.westus.logic.azure.com:443/workflows/7b878522584c4888b9ba65947e388d3c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7tWwYUpE4uJYh1GOFvCaxBi9QNzkkykVjCmDJumUNNw', {
+	method: 'POST',
+	body: JSON.stringify({
+		firstName: firstName,
+		lastName: lastName,
+		comment: comments
+	}),
+	headers: {
+		'Content-type': 'application/json; charset=UTF-8'
+	}
+}).then(function (response) {
+	if (response.ok) {
+		return response.json();
+	}
+	return Promise.reject(response);
+}).then(function (data) {
+	console.log(data);
+}).catch(function (error) {
+	console.warn('Something went wrong.', error);
+});
+}
+	callApi();
 </script>
 </body>
 </html>
