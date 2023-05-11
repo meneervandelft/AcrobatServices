@@ -6,18 +6,20 @@
 </head>
 
 <body>
-	<strong>Hallo daar wederom 8</strong>
+	<strong>Hallo daar wederom 10</strong>
 	
 <script>
 function callApi(){
-let firstName = "Paul";
-let lastName = "van Delft";
-let comments = "test";
-fetch('https://ims-na1.adobelogin.com/ims/token/v2?grant_type=client_credentials&client_id=93f7155147a04986b3542b29e54e4b8e&client_secret=p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf&scope=openid,AdobeID,DCAPI', {
+fetch('https://pdf-services-ue1.adobe.io/assets', {
 	mode: "no-cors",
 	method: 'POST',
+	body: JSON.stringify({
+		mediaType: 'application/pdf'
+	}),
 	headers: {
-		'Content-type': 'application/x-www-form-urlencoded'
+		'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEta2V5LWF0LTEuY2VyIiwia2lkIjoiaW1zX25hMS1rZXktYXQtMSIsIml0dCI6ImF0In0.eyJpZCI6IjE2ODM4MTY1NDc5MDhfZDc1OWIwYTQtYjM5MS00ZWExLTkzMmQtYzM3ZDhlYjQ0MTFjX3VlMSIsIm9yZyI6Ijk2Qzc0RTQ3NjFBOUQ4MjcwQTQ5NUY5N0BBZG9iZU9yZyIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJjbGllbnRfaWQiOiI5M2Y3MTU1MTQ3YTA0OTg2YjM1NDJiMjllNTRlNGI4ZSIsInVzZXJfaWQiOiI1OUFBMjg5MDY0NUNEQUIyMEE0OTVDQzNAdGVjaGFjY3QuYWRvYmUuY29tIiwiYXMiOiJpbXMtbmExIiwiYWFfaWQiOiI1OUFBMjg5MDY0NUNEQUIyMEE0OTVDQzNAdGVjaGFjY3QuYWRvYmUuY29tIiwiY3RwIjozLCJtb2kiOiI2MjE3NTJiMyIsImV4cGlyZXNfaW4iOiI4NjQwMDAwMCIsImNyZWF0ZWRfYXQiOiIxNjgzODE2NTQ3OTA4Iiwic2NvcGUiOiJEQ0FQSSxvcGVuaWQsQWRvYmVJRCJ9.NIa0g5oVeTd1eC8L0qKpRtJEQ76rVhPS0vlUc055C3I0Z3WZK4wlGn7N7VTEdhKNII_IC9zIMdiqpGBDfYJTxv15ffNfvsGayapaWot1m8kf3XN2o82ga6hI6KcMvhU3f3ixxJtPKdBtkvVscx7xFjZrptk71XgXgaF2kyZnjW_ukLtPIsbV-fce3EC5UyJlgdD6judi72zAXi6pPFHsj8yNHNE0zbBYw-N3cQWvQEqGXO95ujvoM2ISTem6NQgpZQ4KLUaiCpb5XgiASxdbJhjgzIv5GTKFcnJCegVUGwg7fM3BAFvGPCvXR_n2Ta_p_8VjwcVxebXnWvrL9uq4Ig',
+		'Content-type': 'application/x-www-form-urlencoded',
+		'x-api-key':'93f7155147a04986b3542b29e54e4b8e'
 	}
 }).then(function (response) {
 	if (response.ok) {
