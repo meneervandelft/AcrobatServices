@@ -6,13 +6,13 @@
 </head>
 
 <body>
-	<strong>Hallo daar wederom 4</strong>
+	<strong>Hallo daar wederom 5</strong>
 	
 <script>
 function callApi(){
-let firstName = document.getElementById("firstName").value;
-let lastName = document.getElementById("lastName").value;
-let comments = document.getElementById("firstName").value;
+let firstName = "Paul";
+let lastName = "van Delft";
+let comments = "test";
 fetch('https://prod-52.westus.logic.azure.com:443/workflows/7b878522584c4888b9ba65947e388d3c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7tWwYUpE4uJYh1GOFvCaxBi9QNzkkykVjCmDJumUNNw', {
 	method: 'POST',
 	body: JSON.stringify({
