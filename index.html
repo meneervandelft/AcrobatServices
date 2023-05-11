@@ -6,31 +6,30 @@
 </head>
 
 <body>
-	<strong>Hallo daar wederom 6</strong>
+	<strong>Hallo daar wederom 7</strong>
 	
 <script>
-function callApi(){
-let firstName = "Paul";
-let lastName = "van Delft";
-let comments = "test";
-fetch('https://ims-na1.adobelogin.com/ims/token/v2?grant_type=client_credentials&client_id=93f7155147a04986b3542b29e54e4b8e&client_secret=p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf&scope=openid,AdobeID,DCAPI', {
-	mode: "no-cors",
-	method: 'POST',
-	headers: {
-		'Content-type': 'application/json; charset=UTF-8'
-	}
-}).then(function (response) {
-	if (response.ok) {
-		return response.json();
-	}
-	return Promise.reject(response);
-}).then(function (data) {
-	console.log(data);
-}).catch(function (error) {
-	console.warn('Something went wrong.', error);
-});
-}
-	callApi(); 
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+myHeaders.append("Cookie", "ftrset=545; relay=544f3573-bf6b-4cff-8086-02d21fd0d6d8");
+
+var urlencoded = new URLSearchParams();
+urlencoded.append("client_secret", "p8e-2BYtCEFT7D7DIshb1C97A5MDn74FbvNf");
+urlencoded.append("grant_type", "client_credentials");
+urlencoded.append("scope", "openid, AdobeID, DCAPI");
+
+var requestOptions = {
+  mode: "no-cors",
+  method: 'POST',
+  headers: myHeaders,
+  body: urlencoded,
+  redirect: 'follow'
+};
+
+fetch("https://ims-na1.adobelogin.com/ims/token/v3?client_id=93f7155147a04986b3542b29e54e4b8e", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 </script>
 </body>
 </html>
